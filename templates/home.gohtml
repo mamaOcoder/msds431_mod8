@@ -1,0 +1,26 @@
+<h1>Intelligent Systems & Robotics Library</h1>
+<p>A place to view and search the firm’s collection of documents on intelligent systems and robotics.</p> 
+
+<script>
+console.log("Welcome page sent to user/client using a Go template")
+</script>
+
+<form method="post" action="/">
+    <label for="pages">Select a Topic:</label>
+    <select id="pages" name="pages">
+        {{range .PageTitles}}
+            <!-- Each option element represents an option in a select element -->
+            <option value="{{.}}" {{if eq . $.SelectedPage}}selected{{end}}>{{.}}</option>
+        {{end}}
+    </select>
+    <div>
+        <!-- Add a hidden input field to differentiate between page load and form submission -->
+        <input type="hidden" name="form_submitted" value="1">
+        
+        <input type="submit" value="Submit">
+    </div>
+    <script>
+    console.log("Form sent to user/client using a Go template")
+    </script>
+</form>
+
